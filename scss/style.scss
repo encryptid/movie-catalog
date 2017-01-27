@@ -1,0 +1,27 @@
+/* Include Foundation! */
+
+@import '../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+body {
+    @include grid-row();
+    background-color: lightseagreen;
+
+    ul {
+        //border: 1px solid black;
+        list-style: none;
+
+        li {
+            border: 1px solid black;
+            margin: 5px;
+        }
+    }
+}
+
+
+
+button {
+    @include button
+}

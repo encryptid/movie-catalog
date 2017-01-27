@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Movie thing!</title>
+    <!-- add css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- add js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body ng-app="MovieApp">
+    <h1>Movie app!</h1>
+    <section ng-controller="InputController">
+    <input type="text" ng-model="name" placeholder="Movie name">
+    <input type="text" ng-model="date" placeholder="Release date">
+    <input type="text" ng-model="genre" placeholder="Genre">
+    <button ng-click="newMovie()">Add</button>
+    <h2 id="list-header">List of movies:</h2>
+        <ul>
+            <li ng-repeat="aMovie in movies">
+                <p>Movie: {{ aMovie.name }}</p>
+                <p>Date: {{ aMovie.date }}</p>
+                <p>Genre: {{ aMovie.genre }}</p>
+                <p>Liked? {{ aMovie.liked }}</p>
+                    <button ng-click="liked($index)">Like</button>
+                    <button ng-click="disliked($index)">Dislike</button>
+            </li>
+        </ul>
+    </section>
+
+</body>
+
+</html>
